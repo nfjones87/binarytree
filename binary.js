@@ -111,6 +111,21 @@ class BinarySearchTree {
 
 }
 
+
+//find height
+function findHeight(tree){
+    if (tree) {
+        return 1 + Math.max(findHeight(tree.left), findHeight(tree.right));
+    } else {
+        return 0;
+    }
+}
+
+
+
+
+
+
 let bst = new BinarySearchTree();
 
 // bst.insert(0, 'e');
@@ -137,16 +152,11 @@ bst.insert(6, 'n5');
 bst.insert(0, 'n6');
 bst.insert(97, 'n7');
 
-console.log(bst);
+//console.log(bst);
 
-//find height
-function findHeight(tree){
-    if (tree) {
-        return 1 + Math.max(findHeight(tree.left), findHeight(tree.right));
-    } else {
-        return 0;
-    }
-}
+
+
+
 
 
 //console.log(findHeight(bst));
@@ -168,4 +178,7 @@ function isBst(tree) {
 }
 
 console.log(isBst(bst));
+
+
+
 
