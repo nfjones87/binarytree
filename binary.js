@@ -114,10 +114,28 @@ class BinarySearchTree {
 
 let bst = new BinarySearchTree();
 
-bst.insert(2, "nick");
-bst.insert(4, "saule");
-bst.insert(1, "nicki");
-bst.insert(7, "nic");
+// bst.insert('e',1);
+// bst.insert('a',2);
+
+bst.insert(0, 'e');
+bst.insert(1, 'a');
+bst.insert(2, 's');
+bst.insert(3, 'y');
+bst.insert(4, 'q');
+bst.insert(5, 'u');
+bst.insert(6, 'e');
+bst.insert(7, 's');
+bst.insert(8, 't');
+bst.insert(9, 'i');
+bst.insert(10, 'o');
+bst.insert(11, 'n');
+
+// bst.insert(1, "nick");
+// bst.insert(2, "saule");
+// bst.insert(3, "nicki");
+// bst.insert(4, "nic");
+
+
 
 console.log(bst);
 
