@@ -109,33 +109,63 @@ class BinarySearchTree {
         return this.left._findMin();
     }
 
-
 }
 
 let bst = new BinarySearchTree();
 
-// bst.insert('e',1);
-// bst.insert('a',2);
+// bst.insert(0, 'e');
+// bst.insert(1, 'a');
+// bst.insert(2, 's');
+// bst.insert(3, 'y');
+// bst.insert(4, 'q');
+// bst.insert(5, 'u');
+// bst.insert(6, 'e');
+// bst.insert(7, 's');
+// bst.insert(8, 't');
+// bst.insert(9, 'i');
+// bst.insert(10, 'o');
+// bst.insert(11, 'n');
 
-bst.insert(0, 'e');
-bst.insert(1, 'a');
-bst.insert(2, 's');
-bst.insert(3, 'y');
-bst.insert(4, 'q');
-bst.insert(5, 'u');
-bst.insert(6, 'e');
-bst.insert(7, 's');
-bst.insert(8, 't');
-bst.insert(9, 'i');
-bst.insert(10, 'o');
+//console.log(bst);
+
 bst.insert(11, 'n');
-
-// bst.insert(1, "nick");
-// bst.insert(2, "saule");
-// bst.insert(3, "nicki");
-// bst.insert(4, "nic");
-
-
+bst.insert(55, 'n1');
+bst.insert(7, 'n2');
+bst.insert(1, 'n3');
+bst.insert(24, 'n4');
+bst.insert(6, 'n5');
+bst.insert(0, 'n6');
+bst.insert(97, 'n7');
 
 console.log(bst);
+
+//find height
+function findHeight(tree){
+    if (tree) {
+        return 1 + Math.max(findHeight(tree.left), findHeight(tree.right));
+    } else {
+        return 0;
+    }
+}
+
+
+//console.log(findHeight(bst));
+
+
+//determine if tree is binary search tree
+
+function isBst(tree) {
+    if (tree === null) {
+        return true; 
+    } 
+    if(tree.left != undefined && tree.left.value > tree.value) {
+        return false;
+    }
+    if (tree.right != undefined && tree.right.value <= tree.value) {
+        return false;
+    }
+    return isBst(tree.left) && isBst(tree.right);
+}
+
+console.log(isBst(bst));
 
