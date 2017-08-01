@@ -147,12 +147,12 @@ bst.insert(11, 'n');
 bst.insert(55, 'n1');
 bst.insert(7, 'n2');
 bst.insert(1, 'n3');
-bst.insert(24, 'n4');
-bst.insert(6, 'n5');
-bst.insert(0, 'n6');
+// bst.insert(24, 'n4');
+// bst.insert(6, 'n5');
+// bst.insert(0, 'n6');
 bst.insert(97, 'n7');
 
-//console.log(bst);
+console.log(bst);
 
 
 
@@ -164,17 +164,18 @@ bst.insert(97, 'n7');
 
 //determine if tree is binary search tree
 
-function isBst(tree) {
+function isBst(tree, min, max) {
     if (tree === null) {
         return true; 
     } 
-    if(tree.left != undefined && tree.left.value > tree.value) {
+
+    if((max !== null && tree.key > max) || (min !== null && tree.key < min) ) {
         return false;
     }
-    if (tree.right != undefined && tree.right.value <= tree.value) {
+    if (!isBst(tree.left,min,tree.key) || (!isBst(tree.right,tree.key,max))) {
         return false;
     }
-    return isBst(tree.left) && isBst(tree.right);
+    return true;
 }
 
 console.log(isBst(bst));
